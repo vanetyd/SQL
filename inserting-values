@@ -1,0 +1,198 @@
+INSERT
+	INTO equipe(nome, qtdd_de_recursos)
+	VALUES('Equipe I', 4);
+INSERT
+	INTO equipe(nome, qtdd_de_recursos)
+	VALUES('Equipe II', 4);
+INSERT
+	INTO equipe(nome, qtdd_de_recursos)
+	VALUES('Equipe III', 4);
+
+
+INSERT
+	INTO especializacao(cargo)
+	VALUE('Gerente de projeto');
+INSERT
+	INTO especializacao(cargo)
+	VALUE('Analista de negócios');
+INSERT
+	INTO especializacao(cargo)
+	VALUE('DBA');
+INSERT
+	INTO especializacao(cargo)
+	VALUE('Programador');
+
+
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Adriana Fagundes', 2100, 5134415678, 'rua carmense 133, porto alegre - rs', 1, 1);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Rodrigo Silva', 2500, 5131678900, 'rua barbacena 78, cachoeirinha rs', 1, 2);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Gilson Mendes', 2800, 5136417640, 'rua goias 100, cachoeirinha rs', 1, 3);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Leandro Cardoso', 2450, 5137498873, 'rua taquara 287, esteio rs', 1, 4);
+	
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Carlos Barbosa', 2850, 5134776577, 'rua pinho 14, gravatai rs', 2, 1);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Sabrina Oliveira', 2600, 5138897600, 'rua dos ipes 89, caxias rs', 2, 2);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Vinicius Pedroso', 2200, 5134227655, 'rua cascais 17, porto alegre rs', 2, 3);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Maurício Antunes', 2700, 5138625077, 'rua bandeirantes 173, canoas rs', 2, 4);
+	
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Paulo Pacheco', 2900, 5138815634, 'rua bom jesus 33, caxias rs', 3, 1);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Juliana Jardim', 2800, 5134187765, 'rua padre felipe 186, esteio rs', 3, 2);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Andressa Ferreira', 2600, 5134415574, 'rua rio branco 78, caxias rs', 3, 3);
+INSERT
+	INTO recurso (nome, salario, telefone, endereco, id_equipe, id_cargo)
+	VALUES ('Eduardo Santos', 2100, 5134415678, 'rua papa pio 145, porto alegre rs', 3, 4);
+
+
+INSERT 
+	INTO projeto(inicio, nome, previsao_termino, horas_previstas, id_equipe, id_gerente)
+	VALUES(20201110, 'Desenvolvimento do Software', 20210110, 300, 1, 1);
+INSERT
+	INTO projeto(inicio, nome, previsao_termino, horas_previstas, id_equipe, id_gerente)
+	VALUES(20201115, 'Desenvolvimento do site', 20201220, 125, 2, 5);
+INSERT 
+	INTO projeto(inicio, nome, previsao_termino, horas_previstas, id_equipe, id_gerente)
+	VALUES(20210110, 'Desenvolvimento do app mobile', 20210110, 100, 3, 9);
+	
+
+INSERT
+	INTO aumentosalarial(valor, dia, id_recurso)
+	VALUES(200, 20190512, 8);
+INSERT
+	INTO aumentosalarial(valor, dia, id_recurso)
+	VALUES(300, 20200827, 8);
+INSERT
+	INTO aumentosalarial(valor, dia, id_recurso)
+	VALUES(200, 20200512, 10);
+INSERT
+	INTO aumentosalarial(valor, dia, id_recurso)
+	VALUES(550, 20200512, 5);
+
+
+INSERT
+	INTO atividade(nome) VALUE('Projetar');
+INSERT
+	INTO atividade(nome) VALUE('Desenvolver');
+INSERT
+	INTO atividade(nome) VALUE('Testar');
+INSERT
+	INTO atividade(nome) VALUE('Finalizar');
+	
+INSERT
+	INTO tarefa(descricao) VALUE('discutir sobre projeto');
+INSERT
+	INTO tarefa(descricao) VALUE('criar rascunho sobre projeto');
+INSERT
+	INTO tarefa(descricao) VALUE('desenvolver prototipo');
+	
+INSERT
+	INTO tarefa(descricao) VALUE('construir e desenvolver');
+	
+INSERT
+	INTO tarefa(descricao) VALUE('testar projeto');
+INSERT
+	INTO tarefa(descricao) VALUE('arrumar bugs');
+	
+INSERT
+	INTO tarefa(descricao) VALUE('terminar projeto');
+	
+
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(1,1);
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(1,2);
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(1,3);
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(2,4);
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(3,5);
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(3,6);	
+INSERT
+	INTO atividade_tarefa(id_atividade, id_tarefa)
+	VALUES(4,7);
+
+
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(1, 1);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(2, 1);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(3, 1);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(4, 1);
+	
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(1, 2);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(2, 2);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(3, 2);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(4, 2);
+
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(1, 3);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(2, 3);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(3, 3);
+INSERT
+	INTO projeto_atividade(id_atividade, id_projeto)
+	VALUES(4, 3);
+
+
+INSERT
+	INTO ferramentaprog(nome, versao)
+	VALUE ('CodeBlocks', 4);
+INSERT
+	INTO ferramentaprog(nome, versao)
+	VALUE ('Visual Studio', 8);
+
+
+INSERT
+	INTO recurso_ferramentaprog(id_recurso, id_ferramentaProg)
+	VALUE(4, 1);
+INSERT
+	INTO recurso_ferramentaprog(id_recurso, id_ferramentaProg)
+	VALUE(8, 2);
+INSERT
+	INTO recurso_ferramentaprog(id_recurso, id_ferramentaProg)
+	VALUE(12, 1);
