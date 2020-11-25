@@ -4,7 +4,7 @@ This is a project I worked on for Database class.
 The project consisted on creating the tables, inserting values in them and making some filtered searching.
 All in MySQL being acessed from Windows command prompt.
 
-The order you should see it it's:
+The order you should see it is:
 1- ER_APS;
 2- creating-tables;
 3- inserting-values;
