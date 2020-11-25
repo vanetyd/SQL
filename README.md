@@ -18,8 +18,13 @@ In "ER-APS" you can see the entity-relationship diagram I made about a case that
 so I guess you'll just have to believe this is all they asked me to put in the database (sorry).
 
 In "filtered-search" I chose to:
+
 first, to search who programs in Visual Studio;
+
 second, to see it's historic of salary increase;
+
 third, to know which team it works on;
+
 fourth, to see which projects are from the team's responsability;
+
 and fifth, to know what tasks are responsabilities of the team.
