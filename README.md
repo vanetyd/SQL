@@ -5,9 +5,13 @@ The project consisted on creating the tables, inserting values in them and makin
 All in MySQL being acessed from Windows command prompt.
 
 The order you should see it is:
+
 1- ER_APS;
+
 2- creating-tables;
+
 3- inserting-values;
+
 4- filtered-search.
 
 In "ER-APS" you can see the entity-relationship diagram I made about a case that I unfortunely don't have anymore,
