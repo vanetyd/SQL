@@ -1,0 +1,59 @@
+SELECT
+	recurso.id AS "ID Recurso",
+	recurso.nome AS "Programadores",
+	ferramentaprog.nome AS "Ferramenta"
+FROM recurso_ferramentaprog
+JOIN ferramentaprog
+JOIN recurso
+ON (recurso.id = recurso_ferramentaprog.id_recurso)
+AND (ferramentaprog.id = recurso_ferramentaprog.id_ferramentaProg);
+
+
+
+SELECT
+	recurso.nome AS "Programador VS",
+	a.dia AS "Histórico do aumento salarial",
+	a.valor AS "Valor"
+FROM aumentosalarial a
+JOIN recurso
+ON (a.id_recurso = recurso.id)
+WHERE(recurso.id=8);
+
+
+SELECT
+	recurso.nome AS "Programador VS",
+	recurso.id_equipe AS "ID da equipe",
+	equipe.nome AS "Nome da equipe"
+FROM recurso
+JOIN equipe
+ON (recurso.id_equipe=equipe.id)
+WHERE(recurso.id=8);
+	
+	
+SELECT
+	equipe.nome AS "Equipe",
+	projeto.nome AS "Nome do projeto",
+	projeto.id AS "ID do projeto",
+	projeto.inicio AS "Inicio do projeto",
+	projeto.previsao_termino AS "Previsao do termino do projeto",
+	projeto.horas_previstas AS "Carga horária prevista",
+	recurso.nome AS "Gerente do projeto"
+FROM projeto
+JOIN equipe
+JOIN recurso
+ON (projeto.id_equipe=equipe.id)
+AND (projeto.id_gerente=recurso.id)
+WHERE(equipe.id=2) \G;
+	
+	
+SELECT
+	equipe.nome AS "Equipe",
+	atividade.nome AS "Atividades",
+	tarefa.descricao AS "Descricao das tarefas"
+FROM atividade_tarefa at
+JOIN atividade
+JOIN tarefa
+JOIN equipe
+ON (at.id_atividade=atividade.id)
+AND (at.id_tarefa=tarefa.id)
+WHERE (equipe.id=2);
