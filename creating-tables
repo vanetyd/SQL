@@ -1,96 +1,98 @@
 CREATE DATABASE aps2;
+
 USE aps2;
+
 CREATE TABLE atividade(
-	id  		INT 				    AUTO_INCREMENT,
-	nome 		VARCHAR(30) 		NOT NULL,
+	id INT AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL,
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE tarefa(
-	id 			    INT 			    AUTO_INCREMENT,
-	descricao 	VARCHAR(200) 	NOT NULL,
+	id INT AUTO_INCREMENT,
+	descricao VARCHAR(200) NOT NULL,
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE atividade_tarefa(
-	id 				    INT 	AUTO_INCREMENT,
-	id_atividade 	INT 	NOT NULL,
-	id_tarefa 		INT 	NOT NULL,
+	id INT AUTO_INCREMENT,
+	id_atividade INT NOT NULL,
+	id_tarefa INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_atividade) REFERENCES atividade(id),
 	FOREIGN KEY(id_tarefa) REFERENCES tarefa(id)
 );
 
 CREATE TABLE equipe(
-	id 					        INT   			AUTO_INCREMENT,
-	nome  				      VARCHAR(30) NOT NULL,
-	qtdd_de_recursos  	INT  				NOT NULL,
+	id INT AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL,
+	qtdd_de_recursos INT NOT NULL,
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE especializacao(
-	id 			INT 			    AUTO_INCREMENT,
-	cargo 	VARCHAR(20) 	NOT NULL,
+	id INT AUTO_INCREMENT,
+	cargo VARCHAR(20) NOT NULL,
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE recurso(
-	id 			    INT 			      AUTO_INCREMENT,
-	nome 		    VARCHAR(30) 	  NOT NULL,
-	salario 	  DECIMAL(10,2) 	NOT NULL,
-	telefone 	  BIGINT 			    NOT NULL,
-	endereco 	  VARCHAR(80) 	  NOT NULL,
-	id_equipe 	INT 			      NOT NULL,
-	id_cargo 	  INT 			      NOT NULL,
+	id INT AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL,
+	salario DECIMAL(10,2) NOT NULL,
+	telefone BIGINT NOT NULL,
+	endereco VARCHAR(80) NOT NULL,
+	id_equipe INT NOT NULL,
+	id_cargo INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_equipe) REFERENCES equipe(id),
 	FOREIGN KEY(id_cargo) REFERENCES especializacao(id)
 );
 
 CREATE TABLE projeto(
-	id 					      INT 			    AUTO_INCREMENT,
-	nome 				      VARCHAR(30) 	NOT NULL,
-	inicio 				    DATE 			    NOT NULL,
-	previsao_termino 	DATE 			    NOT NULL,
-	termino 			    DATE,
-	horas_previstas 	INT 			    NOT NULL,
-	horas_utilizadas 	INT,
-	id_equipe 	 		  INT 			    NOT NULL,
-	id_gerente 			  INT 			    NOT NULL,
+	id INT AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL,
+	inicio DATE NOT NULL,
+	previsao_termino DATE NOT NULL,
+	termino DATE,
+	horas_previstas INT NOT NULL,
+	horas_utilizadas INT,
+	id_equipe INT NOT NULL,
+	id_gerente INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_equipe) REFERENCES equipe(id),
 	FOREIGN KEY(id_gerente) REFERENCES recurso(id)
 );
 
 CREATE TABLE projeto_atividade(
-	id 				    INT 	AUTO_INCREMENT,
-	id_atividade 	INT 	NOT NULL,
-	id_projeto 		INT 	NOT NULL,
+	id INT AUTO_INCREMENT,
+	id_atividade INT NOT NULL,
+	id_projeto INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_atividade) REFERENCES atividade(id),
 	FOREIGN KEY(id_projeto) REFERENCES projeto(id)
 );
 
 CREATE TABLE aumentosalarial(
-	id 			    INT  			      AUTO_INCREMENT,
-	valor 	    DECIMAL(10,2) 	NOT NULL,
-	dia 		    DATE 			      NOT NULL,
-	id_recurso 	INT 			      NOT NULL,
+	id INT AUTO_INCREMENT,
+	valor DECIMAL(10,2) NOT NULL,
+	dia DATE NOT NULL,
+	id_recurso INT NOT NULL,
 	PRIMARY KEY(id),
 	FOREIGN KEY(id_recurso) REFERENCES recurso(id)
 );
 
 CREATE TABLE ferramentaprog(
-	id 		  INT  				AUTO_INCREMENT,
-	nome  	VARCHAR(30) NOT NULL,
-	versao 	INT  				NOT NULL,
+	id INT AUTO_INCREMENT,
+	nome VARCHAR(30) NOT NULL,
+	versao INT NOT NULL,
 	PRIMARY KEY(id)
 );
 
 CREATE TABLE recurso_ferramentaprog(
-	id 					        INT 	AUTO_INCREMENT,
-	id_recurso 			    INT 	NOT NULL,
-	id_ferramentaProg 	INT 	NOT NULL,
+	id INT AUTO_INCREMENT,
+	id_recurso INT NOT NULL,
+	id_ferramentaProg INT NOT NULL,
 	PRIMARY KEY (id),
 	FOREIGN KEY(id_recurso) REFERENCES recurso(id),
 	FOREIGN KEY(id_ferramentaProg) REFERENCES ferramentaprog(id)
